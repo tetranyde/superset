@@ -429,6 +429,16 @@ const config: ControlPanelConfig = {
               ),
             },
           },
+          {
+            name: 'show_lasitha_on_chart',
+            config: {
+              type: 'CheckboxControl',
+              label: t('Show Lasitha'),
+              renderTrigger: true,
+              default: true,
+              description: t('Whether to display a Lasitha in table columns'),
+            },
+          },
         ],
         [
           {
