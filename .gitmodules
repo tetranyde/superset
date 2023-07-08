@@ -42,5 +42,3 @@
 [submodule "superset-frontend/plugins/plugins-tetranyde-charts"]
 	path = superset-frontend/plugins/plugins-tetranyde-charts
 	url = git@bitbucket.org:tetranyde/plugins-tetranyde-charts.git
-[submodule "superset-frontend/superset-frontend/plugins/plugins-tetranyde-charts"]
-	path = superset-frontend/plugins/plugins-tetranyde-charts
