@@ -1379,7 +1379,7 @@ TEST_DATABASE_CONNECTION_TIMEOUT = timedelta(seconds=30)
 CONTENT_SECURITY_POLICY_WARNING = True
 
 # Do you want Talisman enabled?
-TALISMAN_ENABLED = True
+TALISMAN_ENABLED = False
 # If you want Talisman, how do you want it configured??
 TALISMAN_CONFIG = {
     "content_security_policy": {
@@ -1397,6 +1397,7 @@ TALISMAN_CONFIG = {
     },
     "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
+    "frame_options": 'ALLOW-FROM http://localhost:8000'
 }
 # React requires `eval` to work correctly in dev mode
 TALISMAN_DEV_CONFIG = {
@@ -1415,6 +1416,7 @@ TALISMAN_DEV_CONFIG = {
     },
     "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
+    "frame_options": 'ALLOW-FROM http://localhost:8000'
 }
 
 #

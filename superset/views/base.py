@@ -35,6 +35,7 @@ from flask import (
     Response,
     send_file,
     session,
+    make_response
 )
 from flask_appbuilder import BaseView, Model, ModelView
 from flask_appbuilder.actions import action
@@ -746,7 +747,6 @@ FlaskForm.Meta.bind_field = bind_field
 @superset_app.after_request
 def apply_http_headers(response: Response) -> Response:
     """Applies the configuration's http headers to all responses"""
-
     # HTTP_HEADERS is deprecated, this provides backwards compatibility
     response.headers.extend(
         {**config["OVERRIDE_HTTP_HEADERS"], **config["HTTP_HEADERS"]}
@@ -755,4 +755,5 @@ def apply_http_headers(response: Response) -> Response:
     for k, v in config["DEFAULT_HTTP_HEADERS"].items():
         if k not in response.headers:
             response.headers[k] = v
+    # logger.warn("CALLING AFTER REQUEST - Change Res %s", response.headers )
     return response

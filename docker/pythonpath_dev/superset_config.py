@@ -79,6 +79,15 @@ DATABASE_HOST = get_env_variable("DATABASE_HOST")
 DATABASE_PORT = get_env_variable("DATABASE_PORT")
 DATABASE_DB = get_env_variable("DATABASE_DB")
 
+OVERRIDE_HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+CORS_OPTIONS = {
+'supports_credentials': True,
+'allow_headers': ['*'],
+'resources':['*'],
+'origins': ['*']
+}
+ENABLE_CORS = True
+
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = "{}://{}:{}@{}:{}/{}".format(
     DATABASE_DIALECT,
@@ -130,14 +139,6 @@ CELERY_CONFIG = CeleryConfig
 FEATURE_FLAGS = {"ALERT_REPORTS": True, 'DASHBOARD_CROSS_FILTERS': True, 'EMBEDDED_SUPERSET': True, "ENABLE_TEMPLATE_PROCESSING": True}
 PUBLIC_ROLE_LIKE_GAMMA = True
 CUSTOM_SECURITY_MANAGER = CustomSecurityManager
-HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
-CORS_OPTIONS = {
-'supports_credentials': True,
-'allow_headers': ['*'],
-'resources':['*'],
-'origins': ['*']
-}
-ENABLE_CORS = True
 
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = "http://superset:8088/"
